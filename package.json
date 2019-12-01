@@ -1,0 +1,40 @@
+{
+  "name": "minimal-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "clean": "rm -rf dist/",
+    "dev": "webpack-dev-server --open --config webpack.dev.ts",
+    "build": "webpack --mode production --config webpack.prod.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/styled-components": "4.4.0",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "styled-components": "4.4.1"
+  },
+  "devDependencies": {
+    "@testing-library/react": "9.3.2",
+    "@types/html-webpack-plugin": "3.2.1",
+    "@types/jest": "24.0.23",
+    "@types/react": "16.9.13",
+    "@types/react-dom": "16.9.4",
+    "@types/webpack": "4.41.0",
+    "awesome-typescript-loader": "5.2.1",
+    "html-webpack-plugin": "3.2.0",
+    "jest": "24.9.0",
+    "prettier": "1.19.1",
+    "ts-jest": "24.2.0",
+    "ts-loader": "6.2.1",
+    "ts-node": "8.5.4",
+    "typescript": "3.7.2",
+    "webpack": "4.41.2",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "3.9.0"
+  }
+}
