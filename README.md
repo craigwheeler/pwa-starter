@@ -41,6 +41,7 @@ Technologies used to scaffold this template.
 
 - [React - 16.12.0](https://netlify.com/)
 - [Typescript - 3.7.2](https://www.typescriptlang.org/)
+- [Font Awesome 5](https://github.com/FortAwesome/react-fontawesome)
 - [Styled Components](https://netlify.com/)
 - [Webpack 4](https://netlify.com/)
 - [Prettier](https://netlify.com/)

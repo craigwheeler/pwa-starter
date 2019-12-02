@@ -7,6 +7,11 @@
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
-    "types": ["react", "jest"]
-  }
+    "types": ["react", "jest", "node"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src", "types"]
 }

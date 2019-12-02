@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#317EFB" />
+    <title>React Typescript Starter PWA</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="src/images/icon-192x192.png" />
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <section id="root"></section>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' }).then(
+          function(registration) {
+            console.log('Service worker registration succeeded:', registration);
+          },
+          function(error) {
+            console.log('Service worker registration failed:', error);
+          }
+        );
+      } else {
+        console.log('Service workers are not supported.');
+      }
+    </script>
+  </body>
+</html>

@@ -1,5 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSync } from '@fortawesome/free-solid-svg-icons';
 
 export interface PropType {
   message: string;
@@ -8,15 +10,23 @@ export interface PropType {
 export const Home = (props: PropType) => {
   return (
     <Container>
-      <h1>{props.message}</h1>
+      <IconContainer>
+        <FontAwesomeIcon icon={faSync} size="3x" spin />
+      </IconContainer>
+      {props.message}
     </Container>
   );
 };
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #999;
+  font-weight: 500;
+`;
+
+const IconContainer = styled.div`
+  margin: 25px 0;
 `;
