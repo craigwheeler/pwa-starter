@@ -6,14 +6,15 @@ const OfflinePlugin = require('offline-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin({
-  template: './index.html'
+  filename: 'index.html',
+  template: './src/index.html'
 });
 
 const config: webpack.Configuration = {
   mode: 'production',
-  entry: './index.tsx',
+  entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js'
   },
   resolve: {
@@ -22,7 +23,11 @@ const config: webpack.Configuration = {
   module: {
     rules: [{ test: /\.tsx?$/, loader: 'awesome-typescript-loader' }]
   },
-  plugins: [htmlWebpackPlugin, new OfflinePlugin(), new CopyWebpackPlugin([{ from: 'src/' }])]
+  plugins: [
+    htmlWebpackPlugin,
+    new OfflinePlugin(),
+    new CopyWebpackPlugin([{ from: 'src/img', to: 'img/' }, 'src/manifest.json'], { ignore: ['.DS_Store'] })
+  ]
 };
 
 export default config;

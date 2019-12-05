@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { Router, Route, Switch } from 'react-router-dom';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { createBrowserHistory } from 'history';
-import { Home } from './src/components/home';
+import { Home } from './components/home';
 
 import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 OfflinePluginRuntime.install();
