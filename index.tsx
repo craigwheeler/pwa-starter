@@ -5,6 +5,9 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { createBrowserHistory } from 'history';
 import { Home } from './src/components/home';
 
+import * as OfflinePluginRuntime from 'offline-plugin/runtime';
+OfflinePluginRuntime.install();
+
 declare module 'styled-components' {
   export interface DefaultTheme {
     fontFamily: string;
