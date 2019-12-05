@@ -1,5 +1,5 @@
 const version = 'v1/';
-const assetsToCache = ['/', '/index.html'];
+const assetsToCache = ['/', '/index.html', '/manifest.json'];
 
 self.addEventListener('install', event => {
   self.skipWaiting();
