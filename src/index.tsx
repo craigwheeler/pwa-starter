@@ -6,6 +6,7 @@ import { createBrowserHistory } from 'history';
 import { Home } from './components/home';
 
 import * as OfflinePluginRuntime from 'offline-plugin/runtime';
+import { Sidebar } from './components/sidebar';
 OfflinePluginRuntime.install();
 
 declare module 'styled-components' {
@@ -46,10 +47,11 @@ const Index = () => {
     <ThemeProvider theme={primary}>
       <React.Fragment>
         <GlobalStyle />
+        <Sidebar />
         <Router history={history}>
           <Switch>
             <Route path="/">
-              <Home message={'Hello World!'} />
+              <Home message={'Home'} />
             </Route>
           </Switch>
         </Router>

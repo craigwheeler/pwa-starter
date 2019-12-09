@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSync } from '@fortawesome/free-solid-svg-icons';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 export interface PropType {
   message: string;
@@ -11,7 +11,7 @@ export const Home = (props: PropType) => {
   return (
     <Container>
       <IconContainer>
-        <FontAwesomeIcon icon={faSync} size="3x" spin />
+        <FontAwesomeIcon icon={faHome} size="2x" />
       </IconContainer>
       {props.message}
     </Container>
