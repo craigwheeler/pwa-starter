@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="">
-    <img src="src/images/logo.png" alt="Logo" width="50" height="50">
+    <img src="src/img/logo.png" alt="Logo" width="50" height="50">
   </a>
 
   <h3 align="center">PWA React Boilerplate</h3>
@@ -110,4 +110,4 @@ Link: [https://github.com/craigwheeler/pwa-boilerplate](https://github.com/craig
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[product-screenshot]: src/images/screenshot.png
+[product-screenshot]: src/img/screenshot.png
