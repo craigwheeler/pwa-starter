@@ -2,11 +2,17 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faAtom, faEnvelope, faCog } from '@fortawesome/free-solid-svg-icons';
+import { Link, Switch, Route, BrowserRouter, Router } from 'react-router-dom';
+import { Home } from '../home';
+import { Settings } from '../settings';
+import { createBrowserHistory } from 'history';
 
 interface Props {
   open: boolean;
   setOpen?: (open: boolean) => void;
 }
+
+const history = createBrowserHistory();
 
 const Burger = (props: Props): JSX.Element => {
   return (
@@ -21,26 +27,20 @@ const Burger = (props: Props): JSX.Element => {
 const Menu = (props: Props): JSX.Element => {
   return (
     <StyledMenu open={props.open}>
-      <a href="/">
-        <FontAwesomeIcon icon={faHome} />
-        Home
-      </a>
-      <a href="/">
-        <FontAwesomeIcon icon={faAtom} />
-        Link 1
-      </a>
-      <a href="/">
-        <FontAwesomeIcon icon={faAtom} />
-        Link 2
-      </a>
-      <a href="/">
-        <FontAwesomeIcon icon={faCog} />
-        Settings
-      </a>
-      <a href="/">
-        <FontAwesomeIcon icon={faEnvelope} />
-        About
-      </a>
+      <ul>
+        <li>
+          <Link to="/" onClick={() => props.setOpen(false)}>
+            <FontAwesomeIcon icon={faHome} />
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/settings" onClick={() => props.setOpen(false)}>
+            <FontAwesomeIcon icon={faCog} />
+            Settings
+          </Link>
+        </li>
+      </ul>
     </StyledMenu>
   );
 };
@@ -48,10 +48,16 @@ const Menu = (props: Props): JSX.Element => {
 export const Sidebar = (): JSX.Element => {
   const [open, setOpen] = React.useState<boolean>(false);
   return (
-    <SidebarContainer>
-      <Burger open={open} setOpen={open => setOpen(open)} />
-      <Menu open={open} />
-    </SidebarContainer>
+    <Router history={history}>
+      <SidebarContainer>
+        <Burger open={open} setOpen={open => setOpen(open)} />
+        <Menu open={open} setOpen={open => setOpen(open)} />
+      </SidebarContainer>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/settings" component={Settings} />
+      </Switch>
+    </Router>
   );
 };
 
@@ -115,19 +121,22 @@ const StyledMenu = styled.nav<{ open?: boolean }>`
   @media (max-width: 576px) {
     width: 75%;
   }
-  a {
-    font-size: 16px;
-    text-transform: uppercase;
+  li {
     padding: 20px 30px;
-    font-weight: bold;
-    color: #222;
-    text-decoration: none;
-    transition: color 0.3s linear;
+    list-style: none;
+    a {
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #222;
+      text-decoration: none;
+      transition: color 0.3s linear;
+      &:hover {
+        color: #343078;
+      }
+    }
     @media (max-width: 576px) {
       font-size: 14px;
-    }
-    &:hover {
-      color: #343078;
     }
     svg {
       margin-right: 15px;

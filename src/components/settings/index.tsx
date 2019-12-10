@@ -1,19 +1,19 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 export interface PropType {
   message: string;
 }
 
-export const Home = (props: PropType) => {
+export const Settings = (props: PropType) => {
   return (
     <Container>
       <IconContainer>
-        <FontAwesomeIcon icon={faHome} size="2x" />
+        <FontAwesomeIcon icon={faCog} size="2x" />
       </IconContainer>
-      Home
+      Settings
     </Container>
   );
 };

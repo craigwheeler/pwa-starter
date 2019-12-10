@@ -24,7 +24,7 @@ exports[`Home should render home page 1`] = `
         />
       </svg>
     </div>
-    World
+    Home
   </div>
 </div>
 `;

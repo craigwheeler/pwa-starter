@@ -1,12 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Router, Route, Switch } from 'react-router-dom';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { createBrowserHistory } from 'history';
-import { Home } from './components/home';
-
 import * as OfflinePluginRuntime from 'offline-plugin/runtime';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Sidebar } from './components/sidebar';
+
 OfflinePluginRuntime.install();
 
 declare module 'styled-components' {
@@ -21,7 +18,7 @@ declare module 'styled-components' {
 
 const primary = {
   fontFamily: 'Helvetica Neue',
-  backgroundColor: '#2980b9',
+  backgroundColor: '#1664C1',
   letterSpacing: '0.75px',
   fontSize: '20px',
   color: '#fff'
@@ -40,22 +37,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const history = createBrowserHistory();
-
 const Index = () => {
   return (
     <ThemeProvider theme={primary}>
-      <React.Fragment>
-        <GlobalStyle />
-        <Sidebar />
-        <Router history={history}>
-          <Switch>
-            <Route path="/">
-              <Home message={'Home'} />
-            </Route>
-          </Switch>
-        </Router>
-      </React.Fragment>
+      <GlobalStyle />
+      <Sidebar />
     </ThemeProvider>
   );
 };
