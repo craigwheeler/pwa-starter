@@ -10,14 +10,14 @@
   <p align="center">
     A minimal PWA boilerplate using React & Typescript
     <br />
-    <a href=""><strong>Explore the docs »</strong></a>
+    <a href="/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="">View Demo</a>
+    <a href="https://starter-pwa.netlify.com/">View Demo</a>
     ·
-    <a href="">Report Bug</a>
+    <a href="/">Report Bug</a>
     ·
-    <a href="">Request Feature</a>
+    <a href="/">Request Feature</a>
   </p>
 </p>
 
@@ -64,7 +64,7 @@ Requires Node.js version 11.8 or later
 1. Clone the repo
 
 ```
-git clone https://github.com/craigwheeler/pwa-boilerplate.git
+git clone https://github.com/craigwheeler/starter-pwa.git
 ```
 
 2. Install NPM packages
